@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Nhs.Scwcsu.RealTimeData.Implementations.Dotnet.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "UploadSync "
+    }
+  }
+}
