@@ -1,21 +1,17 @@
 param(
-    [Paramenter()]
     [string]$tenant,
-    [Parameter()]
     [string]$ClientId,
-    [Parameter()]
     [string]$ClientSecret,
-    [Parameter()]
     [string]$OrganisationId,
-    [Parameter()]
     [string]$Resource,
-    [Parameter()]
     [string]$Url,
-    [Parameter()]
     [string]$WorkflowId,
-    [Parameter()]
-    [string]$FilePath
-)
+    [string]$data
+    )
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+
 
 $tokenBody = @{grant_type='client_credentials'
                 client_id=$ClientId
@@ -65,5 +61,23 @@ $headers = @{
 $postUri = "${Url}/api/files/upload/${OrganisationId}/${WorkflowId}";
 
 $response = Invoke-RestMethod -Uri $postUri -Headers $headers -Method Post -Body $multipartContent
+#Write-Host $token;
+
+$contentType = "application/json";
+
+$headers = @{
+    Authorization = "Bearer ${token}"
+    ContentType = $contentType
+    Accept = "text/plain"
+};
+
+$postUri = "${Url}/api/files/collect/${OrganisationId}/${WorkflowId}";
+
+$body = "{'description':'$data','data':'$data'}"
+#Write-Host $body
+
+#Write-Host $postUri
+
+$response = Invoke-RestMethod -Uri $postUri -Headers $headers -Method Post -Body $body
 
 Write-Host $response
