@@ -29,5 +29,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3.1.2
       with:
-        name: CollectFunction-${{github.run_numer}}
+        name: CollectFunction-${{github.run_number}}
         path: /CollectFunction/Release
