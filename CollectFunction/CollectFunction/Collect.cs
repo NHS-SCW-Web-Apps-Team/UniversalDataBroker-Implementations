@@ -40,6 +40,7 @@ namespace CollectFunction
                 var clientId = getEnvVar("ClientId");
                 var clientSecret = getEnvVar("ClientSecret");
                 var tokenResource = getEnvVar("TokenResource");
+                var tenant = getEnvVar("TenantId");
 
 
                 var containerClient = new BlobContainerClient(stor, data.Container);
@@ -61,7 +62,7 @@ namespace CollectFunction
                     await blob.DownloadToAsync(fileStream);
                 }
 
-                var token = await AcquireToken(tokenResource, clientId, clientSecret);
+                var token = await AcquireToken(tokenResource, clientId, clientSecret, tenant);
 
                 var result = await UploadFile($"{localStore}\\{data.FileName}", data.WorkflowGuid, data.OrganisationGuid, token, serviceUrl);
 
@@ -117,7 +118,7 @@ namespace CollectFunction
             return respContent;
         }
 
-        private static async Task<string> AcquireToken(string url, string clientId, string clientSecret)
+        private static async Task<string> AcquireToken(string url, string clientId, string clientSecret, string tenant)
         {
             try
             {
@@ -142,7 +143,7 @@ namespace CollectFunction
                 content.Headers.Clear();
                 content.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
                 _client.DefaultRequestHeaders.Clear();
-                var response = await _client.PostAsync(new Uri("https://login.microsoftonline.com/4088bef3-a7fb-4b63-b87b-4d8eda09b28d/oauth2/token?"), content);
+                var response = await _client.PostAsync(new Uri($"https://login.microsoftonline.com/{tenant}/oauth2/token?"), content);
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
