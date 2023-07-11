@@ -24,18 +24,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Dotnet Publish
-      # uses: EasyDesk/action-dotnet-publish@75033960a28daa2ea89e0c1d8a04754568996506
-      uses: EasyDesk/action-dotnet-publish@v1.0.0
-      with:
-        # Path to the project to publish.
-        path: . # optional, default is .
-        # Directory where all packages will be put (default value is 'packages').
-        output-dir: /Release # optional, default is packages
-        # Build configuration for the build (default value is 'Release').
-        build-configuration: Production # optional, default is Release
-        # Whether to skip the build using the --no-build flag (default value is 'true').
-        skip-build: true # optional, default is true
+    - name: Dotnet Public
+      run: dotnet publish -c Production -o /Release
     - name: Upload artifact
       uses: actions/upload-artifact@v3.1.2
       with:
