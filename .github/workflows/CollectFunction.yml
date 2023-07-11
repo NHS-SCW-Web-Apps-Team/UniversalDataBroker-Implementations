@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore .\CollectFunction\CollectFunction.csproj
     - name: Build
       run: dotnet build .\CollectFunction\CollectFunction.csproj --no-restore
     - name: Dotnet Public
