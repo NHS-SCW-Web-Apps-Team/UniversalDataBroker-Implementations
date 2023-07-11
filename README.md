@@ -3,6 +3,7 @@ A set of different implementations for using the real time data application, for
 
 | Implementation | Link |
 | ---- | ---- |
+| Azure Collect Function App | [Docs](/CollectFunction/CollectFunction.md) |
 | Dotnet | [Docs](/Dotnet/Dotnet.md) |
 | JavaScript | [Docs](/JavaScript/JavaScript.md) |
 | PowerShell | [Docs](/Powershell/Powershell.md) |
