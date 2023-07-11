@@ -23,11 +23,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build /CollectFunction --no-restore
     - name: Dotnet Public
-      run: dotnet publish -c Production -o /Release
+      run: dotnet publish /CollectFunction -c Production -o /CollectFunction/Release
     - name: Upload artifact
       uses: actions/upload-artifact@v3.1.2
       with:
         name: CollectFunction-${{github.run_numer}}
-        path: /Release
+        path: /CollectFunction/Release
