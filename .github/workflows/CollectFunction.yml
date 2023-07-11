@@ -1,0 +1,43 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Dotnet Publish
+      # uses: EasyDesk/action-dotnet-publish@75033960a28daa2ea89e0c1d8a04754568996506
+      uses: EasyDesk/action-dotnet-publish@v1.0.0
+      with:
+        # Path to the project to publish.
+        path: . # optional, default is .
+        # Directory where all packages will be put (default value is 'packages').
+        output-dir: /Release # optional, default is packages
+        # Build configuration for the build (default value is 'Release').
+        build-configuration: Production # optional, default is Release
+        # Whether to skip the build using the --no-build flag (default value is 'true').
+        skip-build: true # optional, default is true
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: CollectFunction-${{github.run_numer}}
+        path: /Release
