@@ -18,3 +18,24 @@ The variables are as follows:
 
 
 The function will require network connectivity to the desired storage account however no inbound traffic is required to the function from the internet as it is all outbound HTTPS traffic.
+
+When calling the function a HTTP Post should be triggered with a body containing the follow:
+| Name | Purpose |
+| ---- | ------- |
+| Container | Storage account container to be accessed |
+| Path | Path with container for any folder structure |
+| FileName | Name and extension of the file to be accessed | 
+| WorkflowGuid | Id of the UDB workflow to be executed |
+| OrganisationGuid | Id of the organisation workflow is being executed as | 
+
+For example:
+
+```javascript
+{
+    "Container": "outgoing",
+    "Path": "FileOutputs/ToUpload",
+    "FileName": "test.csv",
+    "WorkflowGuid": "a002c63e-964b-4582-8774-668178b84b14",
+    "OrganisationGuid": "5119d21c-d90a-4dea-a02b-158a547e6bc3"
+}
+```
