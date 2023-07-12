@@ -1,4 +1,4 @@
-# Implementations of Real Time Data
+# Examples for utilising the Universal Data Broker
 A set of different implementations for using the real time data application, for example uploading to a workflow via SSIS.
 
 | Implementation | Link |
