@@ -5,38 +5,38 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="0DF-01079"
   DTS:CreatorName="SCW\Daniel.Forrester"
-  DTS:DTSID="{6C37C101-A593-4024-AC16-1E23CF1DB669}"
+  DTS:DTSID="{0F9D5627-4401-450C-BCF4-7A7DABD6DB3F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Sample"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{26519BF2-0BFD-4598-948A-ADC6D7D2C95F}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{D5757CF9-7734-4681-B53A-ADEC62FF03DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{58F3E237-D432-4D19-BD66-881C896DD41C}"
+      DTS:DTSID="{8659D450-98C0-48CC-9647-D82E4AD7FF1A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ClientId">
       <DTS:VariableValue
-        DTS:DataType="8"></DTS:VariableValue>
+        DTS:DataType="8">Client ID guid goes here.</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B5C79CE4-1DF1-4DFF-B3AE-630C71C19BAD}"
+      DTS:DTSID="{BF281D23-8CF2-4EEA-80B8-C24E830C0879}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Client_Secret">
       <DTS:VariableValue
-        DTS:DataType="8"></DTS:VariableValue>
+        DTS:DataType="8">Client secret goes here.</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B7D89845-250F-418E-814B-0700AF26D3FD}"
+      DTS:DTSID="{E468D771-21F4-4AD3-8B5A-F1321FD1990D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Filename">
@@ -45,86 +45,123 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{42C9499E-AA16-4BD0-9D65-B05685A09E37}"
+      DTS:DTSID="{F9126CD5-13A5-4658-8CAA-71AD35D30334}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="OrganisationID">
       <DTS:VariableValue
-        DTS:DataType="8"></DTS:VariableValue>
+        DTS:DataType="8">Organisation guid goes here.</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6C8B24B0-78E0-47F0-81AD-0F7FB67A9AF8}"
+      DTS:DTSID="{DC0EB226-B4C4-4267-B008-6DDC5B873C24}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Resource">
       <DTS:VariableValue
-        DTS:DataType="8"></DTS:VariableValue>
+        DTS:DataType="8">api://8b749164-376f-42b2-be78-199c97c2526c</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7C888772-430B-4318-B69E-EC87CB2B2AAB}"
+      DTS:DTSID="{E99C76EF-55E0-44C5-BCB8-AE035E1A9354}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Url">
       <DTS:VariableValue
-        DTS:DataType="8"></DTS:VariableValue>
+        DTS:DataType="8">https://rtd.scwcsu.nhs.uk</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{753E1753-1650-43D6-A5DB-12ACE13DF720}"
+      DTS:DTSID="{DC9B9631-858C-4815-A2E7-E8FBAD29BB03}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="WorkflowId">
       <DTS:VariableValue
-        DTS:DataType="8"></DTS:VariableValue>
+        DTS:DataType="8">Workflow guid goes here.</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute Workflow"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{6FF3C364-6465-4006-B44E-8CB4AF6ED468}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:refId="Package\Foreach file in a folder"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach file in a folder"
+      DTS:DTSID="{3D4F9498-947B-4D35-B48E-983AFF0C5107}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Workflow"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Foreach file in a folder">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{8BDA6FEC-D939-438E-BD03-9F27A53D8607}"
+        DTS:ObjectName="{8BDA6FEC-D939-438E-BD03-9F27A53D8607}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="c:\Files" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
       <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Execute RTDP Workflow.dtsx</PackageName>
-          <ParameterAssignment>
-            <ParameterName>Client_Secret</ParameterName>
-            <BindedVariableOrParameterName>User::Client_Secret</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>ClientId</ParameterName>
-            <BindedVariableOrParameterName>User::ClientId</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>FilePath</ParameterName>
-            <BindedVariableOrParameterName>User::Filename</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>OrganisationID</ParameterName>
-            <BindedVariableOrParameterName>User::OrganisationID</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>Resource</ParameterName>
-            <BindedVariableOrParameterName>User::Resource</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>Url</ParameterName>
-            <BindedVariableOrParameterName>User::Url</BindedVariableOrParameterName>
-          </ParameterAssignment>
-          <ParameterAssignment>
-            <ParameterName>WorkflowID</ParameterName>
-            <BindedVariableOrParameterName>User::WorkflowId</BindedVariableOrParameterName>
-          </ParameterAssignment>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach file in a folder\Execute UDB Workflow"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute UDB Workflow"
+          DTS:DTSID="{B1575C34-C6C9-4849-92AA-08B613A29328}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute UDB Workflow"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Execute UDB Workflow.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>Client_Secret</ParameterName>
+                <BindedVariableOrParameterName>User::Client_Secret</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>ClientId</ParameterName>
+                <BindedVariableOrParameterName>User::ClientId</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>FilePath</ParameterName>
+                <BindedVariableOrParameterName>User::Filename</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>OrganisationID</ParameterName>
+                <BindedVariableOrParameterName>User::OrganisationID</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Resource</ParameterName>
+                <BindedVariableOrParameterName>User::Resource</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>Url</ParameterName>
+                <BindedVariableOrParameterName>User::Url</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>WorkflowID</ParameterName>
+                <BindedVariableOrParameterName>User::WorkflowId</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{F125428C-EFE5-4939-B6BB-D678CC29E00C}"
+          DTS:ObjectName="{F125428C-EFE5-4939-B6BB-D678CC29E00C}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Filename" />
+      </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -138,11 +175,25 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="183,42"
-          Id="Package\Execute Workflow"
-          TopLeft="120,103" />
+          Id="Package\Foreach file in a folder\Execute UDB Workflow"
+          TopLeft="5.5,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="194,103"
+          Size="194,146"
+          Id="Package\Foreach file in a folder"
+          TopLeft="93.5,130.5" />
+        <AnnotationLayout
+          Text="Sample package loops through the files in a folder and executes a Universal Data Broker workflow which uploads the file.&#xD;&#xA;&#xD;&#xA;The variables in this package need to be set to the correct values before executing."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="667,72"
+          Id="d905f681-8605-455b-a25a-774a6391b519"
+          TopLeft="97,38" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
